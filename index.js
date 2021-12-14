@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateHTML = require('./dist/index.html');
+const generateHTML = require('./utils/generateHTML');
 
 const prompts = () => {
     return inquirer.prompt ([
@@ -58,9 +58,17 @@ const prompts = () => {
 
     ])
     .then(answers  => { 
-        var generateHTML =  generateHTML(answers);
-        writeToFile('./dist/index.HTML', generateHTML);
+        var generateIndex =  generateHTML(answers);
+        writeToFile('./dist/index.HTML', generateIndex);
      })
  };
 
  prompts();
+
+ const writeToFile = (fileName, data) => {
+    fs.writeFile(fileName, data, err => {
+        if (err) throw err
+    })
+};
+
+
