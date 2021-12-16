@@ -55,13 +55,17 @@ const prompts = () => {
             }
 
         }
-
+       
     ])
+    
     .then(answers  => { 
-        var generateIndex =  generateHTML(answers);
-        writeToFile('./dist/index.HTML', generateIndex);
+        console.log(answers)
+      
      })
  };
+
+//  var generateIndex =  generateHTML(answers);
+//  writeToFile('./dist/index.HTML', generateIndex);
 
  prompts();
 

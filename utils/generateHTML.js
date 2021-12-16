@@ -21,13 +21,13 @@ generateHTML = data => {
         <h1 class= "header"> My Team </h1>
     </header>
 <div class="container">
-<div class="card" style="width: 18rem;">
+<div class="card" style="max-width: 18rem;">
         <div class="card-body">
             <h5 class="card-title">${data.managerName}</h5>
             <h5>Manager</h5>
-            <h6 class="card-subtitle mb-2 text-muted"> ID: ${data.managerID}</h6>
-            <a href="mailto: ${data.managerEmail}" target="_blank" class="card-link">Email</a>
-            <h6 class="card-subtitle mb-2"> Office Number: ${data.managerOfficeNumber}</h6>
+            <h5 class="card-subtitle"> ID: ${data.managerID}</h5>
+            <a href="mailto: ${data.managerEmail}" target="_blank" class="card-subtitle" >Email</a>
+            <h5 class="card-subtitle"> Office Number: ${data.managerOfficeNumber}</h5>
         </div>
     </div>
 </div>
