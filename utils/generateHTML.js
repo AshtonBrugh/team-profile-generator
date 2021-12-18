@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-generateHTML = data => {
+generateTopHTML = () => {
     return `
     <!DOCTYPE html>
 <html lang="en">
@@ -20,25 +20,54 @@ generateHTML = data => {
 <header>
         <h1 class= "header"> My Team </h1>
     </header>
-<div class="container">
-<div class="card" style="max-width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">${data.managerName}</h5>
-            <h5>Manager</h5>
-            <h5 class="card-subtitle"> ID: ${data.managerID}</h5>
-            <a href="mailto: ${data.managerEmail}" target="_blank" class="card-subtitle" >Email</a>
-            <h5 class="card-subtitle"> Office Number: ${data.managerOfficeNumber}</h5>
-        </div>
-    </div>
-</div>
+<div class="container">`
+};
 
-    
+generateManagerHTML = (name, id, email, oNumber) => {
+return `<div class="card" style="max-width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">${name}</h5>
+            <h5>Manager</h5>
+            <h5 class="card-subtitle"> ID: ${id}</h5>
+            <a href="mailto: ${email}" target="_blank" class="card-subtitle" >Email</a>
+            <h5 class="card-subtitle"> Office Number: ${oNumber}</h5>
+        </div>
+    </div>`
+};
+
+generateInternHTML = (name, id, email, school) => {
+return    `<div class="card" style="max-width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">${name}</h5>
+                <h5>Intern</h5>
+                <h5 class="card-subtitle"> ID: ${id}</h5>
+                <a href="mailto: ${email}" target="_blank" class="card-subtitle" >Email</a>
+                <h5 class="card-subtitle"> School: ${school}</h5>
+            </div>
+        </div>`
+    };
+
+generateEngineerHTML = (name, id, email, github) => {
+return        `<div class="card" style="max-width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">${name}</h5>
+                    <h5>Engineer</h5>
+                    <h5 class="card-subtitle"> ID: ${id}</h5>
+                    <a href="mailto: ${email}" target="_blank" class="card-subtitle" >Email</a>
+                    <h5 class="card-subtitle"> Github: ${github}</h5>
+                </div>
+            </div>`
+        };
+
+generateBottomHTML = () => {
+return `</div> 
 </body>
 </html>
 `
 };
 
-module.exports = generateHTML;
+module.exports = {generateTopHTML, generateManagerHTML, generateInternHTML, generateEngineerHTML, generateBottomHTML};
+
 
 
 
