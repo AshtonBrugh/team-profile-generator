@@ -18,25 +18,32 @@ generateTopHTML = () => {
 
 <body>
 <header>
+        <div id = "header"> 
         <h1 class= "header"> My Team </h1>
+        </div>
     </header>
-<div class="container">`
+    <div class="row d-flex justify-content-center">
+    
+`
 };
 
 generateManagerHTML = (name, id, email, oNumber) => {
 return `<div class="card" style="max-width: 18rem;">
+        <div class="col">
         <div class="card-body">
             <h5 class="card-title">${name}</h5>
             <h5>Manager</h5>
             <h5 class="card-subtitle"> ID: ${id}</h5>
             <a href="mailto: ${email}" target="_blank" class="card-subtitle" >Email</a>
             <h5 class="card-subtitle"> Office Number: ${oNumber}</h5>
-        </div>
+    </div>
+    </div>
     </div>`
 };
 
 generateInternHTML = (name, id, email, school) => {
 return    `<div class="card" style="max-width: 18rem;">
+                <div class="col">
             <div class="card-body">
                 <h5 class="card-title">${name}</h5>
                 <h5>Intern</h5>
@@ -44,11 +51,13 @@ return    `<div class="card" style="max-width: 18rem;">
                 <a href="mailto: ${email}" target="_blank" class="card-subtitle" >Email</a>
                 <h5 class="card-subtitle"> School: ${school}</h5>
             </div>
+            </div>
         </div>`
     };
 
 generateEngineerHTML = (name, id, email, github) => {
 return        `<div class="card" style="max-width: 18rem;">
+                        <div class="col">
                 <div class="card-body">
                     <h5 class="card-title">${name}</h5>
                     <h5>Engineer</h5>
@@ -56,11 +65,13 @@ return        `<div class="card" style="max-width: 18rem;">
                     <a href="mailto: ${email}" target="_blank" class="card-subtitle" >Email</a>
                     <h5 class="card-subtitle"> Github: ${github}</h5>
                 </div>
+                </div>
             </div>`
         };
 
 generateBottomHTML = () => {
-return `</div> 
+return `
+</div>
 </body>
 </html>
 `

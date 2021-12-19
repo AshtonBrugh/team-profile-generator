@@ -109,7 +109,7 @@ const prompts = () => {
                                         if (internID) {
                                             return true;
                                         } else {
-                                            console.log("Please enter your team manager's ID!")
+                                            console.log("Please enter your intern's ID!")
                                         }
                                     }
                                 },
@@ -121,7 +121,7 @@ const prompts = () => {
                                         if (managerEmail) {
                                             return true;
                                         } else {
-                                            console.log("Please enter your manager's email!")
+                                            console.log("Please enter your intern's email!")
                                         }
                                     }
                         
@@ -134,7 +134,7 @@ const prompts = () => {
                                         if (internsSchool) {
                                             return true;
                                         } else {
-                                            console.log("Please enter your manager's office number!")
+                                            console.log("Please enter your intern's school!")
                                         }
                                     }
                         
@@ -212,7 +212,7 @@ const prompts = () => {
                         
                         break;
                     case 'I am finished':
-                        console.log('i am finished')
+                        console.log('           Success! Check out your page at index.html')
                         fs.appendFileSync('./dist/index.HTML', generateHTML.generateBottomHTML());
                         
                         break;
